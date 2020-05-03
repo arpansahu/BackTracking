@@ -8,19 +8,13 @@ using namespace std;
 bool isSafe(char mat[][N], int r, int c)
 {
     // return false if two queens share the same column
-    for (int i = 0; i < r; i++)
-        if (mat[i][c] == 'Q')
-            return false;
+    for (int i = 0; i < r; i++) if (mat[i][c] == 'Q')   return false;
 
     // return false if two queens share the same \ diagonal
-    for (int i = r, j = c; i >= 0 && j >= 0; i--, j--)
-        if (mat[i][j] == 'Q')
-            return false;
+    for (int i = r, j = c; i >= 0 && j >= 0; i--, j--)  if (mat[i][j] == 'Q')   return false;
 
     // return false if two queens share the same / diagonal
-    for (int i = r, j = c; i >= 0 && j < N; i--, j++)
-        if (mat[i][j] == 'Q')
-            return false;
+    for (int i = r, j = c; i >= 0 && j < N; i--, j++)   if (mat[i][j] == 'Q')   return false;
 
     return true;
 }
